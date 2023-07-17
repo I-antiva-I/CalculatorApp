@@ -1,0 +1,340 @@
+*, *::before, *::after
+{
+    box-sizing:     border-box;
+    padding:        0;
+    margin:         0;
+
+    font-family: "League Spartan";
+}
+
+
+html
+{
+    height: 100%;
+}
+
+
+body
+{
+    min-height: 100%;   
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    background-color:   var(--color-main-background);
+    color:              var(--white);
+}
+
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator
+{
+    min-width: 325px;
+    width: 325px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    transition: min-width 0.5s;
+}
+
+
+.container.for-screen
+{
+    align-items: flex-end;
+    background-color: var(--color-screen-background);
+
+    margin-bottom: 1.5rem;
+    
+    border-radius:      8px;
+    overflow: hidden;
+    padding-block:  0.25rem;
+    padding-inline: 0.25rem;
+ 
+    width: 100%;
+
+}
+.container.for-screen input
+{
+    display: flex;
+
+    font-size:  var(--button-digit-font-size);
+    font-weight: 700;
+    
+    background-color: var(--color-screen-background);
+    border: none;
+    color: var(--white);
+    text-align: right;
+
+    width: 100%;
+    height: 100%;
+
+    padding-block:  1.25rem;
+    padding-inline: 1.25rem;
+    
+    border-radius:      8px;
+}
+
+.container.for-header
+{
+    padding-inline: 0rem;
+    padding-block: 1rem;
+}
+
+.container.for-header
+{
+    flex-direction: row;
+}
+
+
+.container.for-labels,
+.container.for-radios
+{
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+    gap: 0.25rem;
+    padding-inline: 0.25rem;
+}
+
+.container.for-radios
+{
+
+    border-radius: 16px;
+    padding-block: 0.25rem;
+    background-color: var(--color-screen-background);
+}
+
+.container.for-radios input
+{
+    width: 16px;
+    height: 16px;
+}
+.container.for-labels label
+{
+    width: 16px;
+    font-size: 0.75rem;
+}
+
+
+.container.for-radios input
+{
+    -webkit-appearance: none;
+    appearance: none;
+
+    border: none;
+    border-radius: 100%;
+    background: var(--color-screen-background);
+}
+.container.for-radios input:checked
+{
+
+    background: var(--color-button-result-back);
+}
+
+
+
+
+
+h1
+{
+    font-size: 1rem;
+    margin-top: auto;
+    margin-right: auto;
+    letter-spacing: 2px;
+    margin-bottom: 0.25rem;
+}
+h2
+{
+
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+
+    margin-top: auto;
+    margin-right: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+
+
+
+.container.for-buttons
+{
+    background-color: var(--color-toggle-background);
+    padding: 1.5rem ;
+    border-radius:      8px;
+
+    width: 100%;
+
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "DIGIT_7        DIGIT_8         DIGIT_9         CONTROL_DEL"
+    "DIGIT_4        DIGIT_5         DIGIT_6         OPERATOR_ADD"
+    "DIGIT_1        DIGIT_2         DIGIT_3         OPERATOR_SUB"
+    "OPERATOR_DOT   DIGIT_0         OPERATOR_DIV    OPERATOR_MUL"
+    "CONTROL_RES    CONTROL_RES     CONTROL_EQU     CONTROL_EQU"
+    ;
+}
+/* DIGITS */
+#digit-0    {grid-area: DIGIT_0;}
+#digit-1    {grid-area: DIGIT_1;}
+#digit-2    {grid-area: DIGIT_2;}
+#digit-3    {grid-area: DIGIT_3;}
+#digit-4    {grid-area: DIGIT_4;}
+#digit-5    {grid-area: DIGIT_5;}
+#digit-6    {grid-area: DIGIT_6;}
+#digit-7    {grid-area: DIGIT_7;}
+#digit-8    {grid-area: DIGIT_8;}
+#digit-9    {grid-area: DIGIT_9;}
+/* CONTROLS */
+#control-delete     {grid-area: CONTROL_DEL;}
+#control-result     {grid-area: CONTROL_EQU;}
+#control-reset      {grid-area: CONTROL_RES;}
+/* OPERATORS */
+#operator-addition          {grid-area: OPERATOR_ADD;}
+#operator-multiplication    {grid-area: OPERATOR_MUL;}
+#operator-subtraction       {grid-area: OPERATOR_SUB;}
+#operator-division          {grid-area: OPERATOR_DIV;}
+#operator-dot               {grid-area: OPERATOR_DOT;}
+
+.container.for-button
+{
+    border-radius:      8px;
+    overflow:           hidden;
+    width:              100%;
+
+}
+
+
+
+.container.for-button button
+{
+    --color-back:           var(--color-button-digit-back);
+    --color-text:           var(--color-button-digit-text);
+    --color-shadow:         var(--color-button-digit-shadow);
+
+    --color-hover:          var(--color-button-digit-hover);
+}
+.container.for-button.control button
+{
+    --color-back:           var(--color-button-control-back);
+    --color-text:           var(--color-button-control-text);
+    --color-shadow:         var(--color-button-control-shadow);
+
+    --color-hover:          var(--color-button-control-hover);
+}
+#control-result button
+{
+    --color-back:           var(--color-button-result-back);
+    --color-text:           var(--color-button-result-text);
+    --color-shadow:         var(--color-button-result-shadow);
+
+    --color-hover:          var(--color-button-result-hover);
+}
+
+
+.container.for-button button
+{
+    font-weight:        700;
+
+    min-width:          var(--button-width);
+    min-height:         var(--button-height);
+    width: 100%;
+    height: 100%;
+
+    letter-spacing: 1px;
+
+    padding-top:        8px;
+    text-align:         center;
+    font-size:          var(--button-digit-font-size);
+    color:              var(--color-text);
+
+    background-color:   var(--color-back);
+    border:             none;
+
+    margin-bottom:  4px;
+    box-shadow: 
+        var(--color-shadow)
+        0px 0px 0px 4px;
+    border-radius:      8px;
+
+    transition:  background-color 0.25s, color 0.25s;
+
+}
+.container.for-button button:hover
+{
+    background-color:   var(--color-hover);
+}
+.container.for-button button:active
+{
+    background-color:   var(--color-shadow);
+}
+
+
+
+.container.for-button.control button
+{
+    font-size:          1.25rem;
+}
+
+#control-result button
+{
+    font-size:          1.25rem;
+}
+
+
+
+
+@media screen and (min-width: 900px) 
+{
+    .calculator
+    {   
+        min-width:  500px;
+        max-width: 500px;
+    }
+    .container.for-buttons
+    {
+        gap: 1.25rem ;
+    }
+    .container.for-button.control button
+    {
+        font-size: 1.5rem;
+    }
+    .container.for-screen input
+    {
+   
+        font-size:  3rem;
+        font-weight: 700;
+    
+        padding-block:  1.25rem;
+        padding-inline: 1.25rem;
+        
+    }
+
+}

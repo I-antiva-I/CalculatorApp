@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <!--CSS-->
+  <link rel="stylesheet" href="./css/styles_variables.css">
+  <link rel="stylesheet" href="./css/styles_main.css">
+
+  <title>Frontend Mentor | Calculator app</title>
+
+
+</head>
+<body>
+  <main>
+    <div class="calculator">
+
+      <div class="container for-header">
+          <h1>Calculator App</h1>
+          <h2>Theme</h2>
+          <div class="container for-themes">
+            <div class="container for-labels">
+              <label for="theme-1">1</label>
+              <label for="theme-2">2</label>
+              <label for="theme-3">3</label>
+            </div>
+            <div class="container for-radios">
+              <input type="radio" id="theme-1" name="theme" value="1">
+              <input type="radio" id="theme-2" name="theme" value="1">
+              <input type="radio" id="theme-3" name="theme" value="1">
+            </div>
+          </div>
+      </div>
+
+      <div class="container for-screen">
+        <input value="777,555"/>
+      </div>
+      
+      <div class="container for-buttons">
+        <!--DIGITS-->
+        <div class="container for-button digit" id="digit-0"><button>0</button></div>
+        <div class="container for-button digit" id="digit-1"><button>1</button></div>
+        <div class="container for-button digit" id="digit-2"><button>2</button></div>
+        <div class="container for-button digit" id="digit-3"><button>3</button></div>
+        <div class="container for-button digit" id="digit-4"><button>4</button></div>
+        <div class="container for-button digit" id="digit-5"><button>5</button></div>
+        <div class="container for-button digit" id="digit-6"><button>6</button></div>
+        <div class="container for-button digit" id="digit-7"><button>7</button></div>
+        <div class="container for-button digit" id="digit-8"><button>8</button></div>
+        <div class="container for-button digit" id="digit-9"><button>9</button></div>
+
+        <!--OPERATORS-->
+        <div class="container for-button operator" id="operator-addition"><button>+</button></div>
+        <div class="container for-button operator" id="operator-subtraction"><button>-</button></div>
+        <div class="container for-button operator" id="operator-multiplication"><button>x</button></div>
+        <div class="container for-button operator" id="operator-division"><button>/</button></div>
+        <div class="container for-button operator" id="operator-dot"><button>.</button></div>
+
+        <!--CONTROLS-->
+        <div class="container for-button control" id="control-delete"><button>DEL</button></div>
+        <div class="container for-button control" id="control-reset"><button>RESET</button></div>
+        <div class="container for-button control" id="control-result"><button>=</button></div>
+
+      </div>
+    </div>
+
+  </main>
+
+  
+
+</body>
+</html>
