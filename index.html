@@ -10,6 +10,13 @@
   <link rel="stylesheet" href="./css/styles_variables.css">
   <link rel="stylesheet" href="./css/styles_main.css">
 
+  <!--THEME-->
+  <link rel="stylesheet" href="" id="theme-css">
+
+  <!--JS-->
+  <script src="./scripts/themes.js"></script>
+  <script src="./scripts/calculation.js"></script>
+
   <title>Frontend Mentor | Calculator app</title>
 
 
@@ -28,48 +35,69 @@
               <label for="theme-3">3</label>
             </div>
             <div class="container for-radios">
-              <input type="radio" id="theme-1" name="theme" value="1">
-              <input type="radio" id="theme-2" name="theme" value="1">
-              <input type="radio" id="theme-3" name="theme" value="1">
+              <input type="radio" id="theme-1" name="theme" value="1" onclick="changeThemeTo('1')">
+              <input type="radio" id="theme-2" name="theme" value="1" onclick="changeThemeTo('2')">
+              <input type="radio" id="theme-3" name="theme" value="1" onclick="changeThemeTo('3')">
             </div>
           </div>
       </div>
 
       <div class="container for-screen">
-        <input value="777,555"/>
+        <div id="screen-secondary"></div>
+        <div id="screen-primary"></div>
       </div>
       
       <div class="container for-buttons">
         <!--DIGITS-->
-        <div class="container for-button digit" id="digit-0"><button>0</button></div>
-        <div class="container for-button digit" id="digit-1"><button>1</button></div>
-        <div class="container for-button digit" id="digit-2"><button>2</button></div>
-        <div class="container for-button digit" id="digit-3"><button>3</button></div>
-        <div class="container for-button digit" id="digit-4"><button>4</button></div>
-        <div class="container for-button digit" id="digit-5"><button>5</button></div>
-        <div class="container for-button digit" id="digit-6"><button>6</button></div>
-        <div class="container for-button digit" id="digit-7"><button>7</button></div>
-        <div class="container for-button digit" id="digit-8"><button>8</button></div>
-        <div class="container for-button digit" id="digit-9"><button>9</button></div>
+        <div class="container for-button digit" id="digit-0">
+          <button onclick="onDigitPressed('0')">0</button></div>
+        <div class="container for-button digit" id="digit-1">
+          <button onclick="onDigitPressed('1')">1</button></div>
+        <div class="container for-button digit" id="digit-2">
+          <button onclick="onDigitPressed('2')">2</button></div>
+        <div class="container for-button digit" id="digit-3">
+          <button onclick="onDigitPressed('3')">3</button></div>
+        <div class="container for-button digit" id="digit-4">
+          <button onclick="onDigitPressed('4')">4</button></div>
+        <div class="container for-button digit" id="digit-5">
+          <button onclick="onDigitPressed('5')">5</button></div>
+        <div class="container for-button digit" id="digit-6">
+          <button onclick="onDigitPressed('6')">6</button></div>
+        <div class="container for-button digit" id="digit-7">
+          <button onclick="onDigitPressed('7')">7</button></div>
+        <div class="container for-button digit" id="digit-8">
+          <button onclick="onDigitPressed('8')">8</button></div>
+        <div class="container for-button digit" id="digit-9">
+          <button onclick="onDigitPressed('9')">9</button></div>
 
         <!--OPERATORS-->
-        <div class="container for-button operator" id="operator-addition"><button>+</button></div>
-        <div class="container for-button operator" id="operator-subtraction"><button>-</button></div>
-        <div class="container for-button operator" id="operator-multiplication"><button>x</button></div>
-        <div class="container for-button operator" id="operator-division"><button>/</button></div>
-        <div class="container for-button operator" id="operator-dot"><button>.</button></div>
+        <div class="container for-button operator" id="operator-addition">
+          <button onclick="onOperatorPressed('+')">+</button></div>
+        <div class="container for-button operator" id="operator-subtraction">
+          <button onclick="onOperatorPressed('-')">-</button></div>
+        <div class="container for-button operator" id="operator-multiplication">
+          <button onclick="onOperatorPressed('x')">x</button></div>
+        <div class="container for-button operator" id="operator-division">
+          <button onclick="onOperatorPressed('/')">/</button></div>
+        <div class="container for-button operator" id="operator-dot">
+          <button onclick="onOperatorPressed('.')">.</button></div>
+        <div class="container for-button operator" id="operator-result">
+          <button onclick="onOperatorPressed('=')">=</button></div>
 
         <!--CONTROLS-->
-        <div class="container for-button control" id="control-delete"><button>DEL</button></div>
-        <div class="container for-button control" id="control-reset"><button>RESET</button></div>
-        <div class="container for-button control" id="control-result"><button>=</button></div>
+        <div class="container for-button control" id="control-delete">
+          <button onclick="onControlPressed('DELETE')">DEL</button></div>
+        <div class="container for-button control" id="control-reset">
+          <button onclick="onControlPressed('RESET')">RESET</button></div>
 
       </div>
     </div>
 
   </main>
 
-  
+  <script>
+    loadTheme();
+  </script>
 
 </body>
 </html>
