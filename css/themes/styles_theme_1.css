@@ -1,0 +1,31 @@
+:root
+{
+    /* Theme 1 --------------------------- */
+
+    /* Backgrounds */
+    --color-main-background:                    hsl(222, 26%, 31%);
+    --color-toggle-background:                  hsl(223, 31%, 20%);
+    --color-screen-background:                  hsl(224, 36%, 15%);
+
+    /* Other */
+    --color-text:                               hsl(0, 0%, 100%);
+    --color-theme-dot:                          hsl(6, 63%, 50%);
+    --color-theme-dot-hover:                    hsl(6, 93%, 67%);
+
+    /* Keys */
+        /* Digit */
+    --color-button-digit-text:                  hsl(221, 14%, 31%);
+    --color-button-digit-back:                  hsl(30, 25%, 89%);
+    --color-button-digit-shadow:                hsl(28, 16%, 65%);
+    --color-button-digit-hover:                 hsl(0, 0%, 100%);
+        /* Control */
+    --color-button-control-text:                hsl(0, 0%, 100%);
+    --color-button-control-back:                hsl(225, 21%, 49%);
+    --color-button-control-shadow:              hsl(224, 28%, 35%);
+    --color-button-control-hover:               hsl(224, 51%, 76%);
+        /* Result */
+    --color-button-result-text:                 hsl(0, 0%, 100%);
+    --color-button-result-back:                 hsl(6, 63%, 50%);
+    --color-button-result-shadow:               hsl(6, 70%, 34%);
+    --color-button-result-hover:                hsl(6, 93%, 67%);
+}
