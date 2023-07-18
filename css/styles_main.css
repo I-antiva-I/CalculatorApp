@@ -25,7 +25,7 @@ body
     align-items: stretch;
 
     background-color:   var(--color-main-background);
-    color:              var(--white);
+    color:              var(--color-text);
 }
 
 
@@ -75,17 +75,19 @@ main
     width: 100%;
 
 }
-.container.for-screen input
+.container.for-screen 
 {
     display: flex;
-
+    
     font-size:  var(--button-digit-font-size);
     font-weight: 700;
     
     background-color: var(--color-screen-background);
     border: none;
-    color: var(--white);
+    color: var(--color-text);
     text-align: right;
+
+    min-height: 5rem;
 
     width: 100%;
     height: 100%;
@@ -94,7 +96,24 @@ main
     padding-inline: 1.25rem;
     
     border-radius:      8px;
+
+    position: relative;
 }
+
+#screen-primary
+{
+    margin-top: 1.25rem;
+}
+
+#screen-secondary
+{
+    position: absolute;
+    top: 0.75rem;
+    right: 1.25rem;
+
+    font-size: 1.25rem;
+}
+
 
 .container.for-header
 {
@@ -147,13 +166,24 @@ main
     border: none;
     border-radius: 100%;
     background: var(--color-screen-background);
+
+    transition: all 0.5s;
 }
 .container.for-radios input:checked
 {
 
-    background: var(--color-button-result-back);
+    background: var(--color-theme-dot);
 }
+.container.for-radios input:checked:hover
+{
 
+    background: var(--color-theme-dot-hover);
+}
+.container.for-radios input:not(:checked):hover
+{
+
+    background: var(--color-button-control-hover);
+}
 
 
 
@@ -198,7 +228,7 @@ h2
     "DIGIT_4        DIGIT_5         DIGIT_6         OPERATOR_ADD"
     "DIGIT_1        DIGIT_2         DIGIT_3         OPERATOR_SUB"
     "OPERATOR_DOT   DIGIT_0         OPERATOR_DIV    OPERATOR_MUL"
-    "CONTROL_RES    CONTROL_RES     CONTROL_EQU     CONTROL_EQU"
+    "CONTROL_RES    CONTROL_RES     OPERATOR_EQU    OPERATOR_EQU"
     ;
 }
 /* DIGITS */
@@ -214,7 +244,6 @@ h2
 #digit-9    {grid-area: DIGIT_9;}
 /* CONTROLS */
 #control-delete     {grid-area: CONTROL_DEL;}
-#control-result     {grid-area: CONTROL_EQU;}
 #control-reset      {grid-area: CONTROL_RES;}
 /* OPERATORS */
 #operator-addition          {grid-area: OPERATOR_ADD;}
@@ -222,6 +251,8 @@ h2
 #operator-subtraction       {grid-area: OPERATOR_SUB;}
 #operator-division          {grid-area: OPERATOR_DIV;}
 #operator-dot               {grid-area: OPERATOR_DOT;}
+#operator-result            {grid-area: OPERATOR_EQU;}
+
 
 .container.for-button
 {
@@ -249,7 +280,7 @@ h2
 
     --color-hover:          var(--color-button-control-hover);
 }
-#control-result button
+#operator-result button
 {
     --color-back:           var(--color-button-result-back);
     --color-text:           var(--color-button-result-text);
@@ -265,8 +296,8 @@ h2
 
     min-width:          var(--button-width);
     min-height:         var(--button-height);
+
     width: 100%;
-    height: 100%;
 
     letter-spacing: 1px;
 
@@ -281,7 +312,7 @@ h2
     margin-bottom:  4px;
     box-shadow: 
         var(--color-shadow)
-        0px 0px 0px 4px;
+        0px var(--button-shadow) 0px 0px;
     border-radius:      8px;
 
     transition:  background-color 0.25s, color 0.25s;
@@ -294,6 +325,11 @@ h2
 .container.for-button button:active
 {
     background-color:   var(--color-shadow);
+    /*
+    min-width:          calc(var(--button-width) - 4px);
+    min-height:         calc(var(--button-height) - 4px);
+    width:              calc(100% - 4px);
+    */
 }
 
 
@@ -315,8 +351,8 @@ h2
 {
     .calculator
     {   
-        min-width:  500px;
-        max-width: 500px;
+        min-width:  520px;
+        max-width:  520px;
     }
     .container.for-buttons
     {
@@ -326,7 +362,7 @@ h2
     {
         font-size: 1.5rem;
     }
-    .container.for-screen input
+    .container.for-screen
     {
    
         font-size:  3rem;
@@ -334,7 +370,18 @@ h2
     
         padding-block:  1.25rem;
         padding-inline: 1.25rem;
+
+        min-height: 7rem;
         
     }
+
+
+    #screen-secondary
+    {
+        right: 1.25rem;
+        font-size: 1.75rem;
+    }
+    
+
 
 }
